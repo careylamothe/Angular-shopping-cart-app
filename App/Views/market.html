@@ -1,0 +1,66 @@
+<div class="form-group">
+
+  <form class="dropdown">
+    <label for="categotySelect">Search by category</label>
+    <select name="categorySelect" ng-model="categorySelect">
+      <option value="{{option}}" ng-repeat="option in vm.categories">{{ option }}</option>
+    </select>
+  </form>
+
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <label for="">Search by name  </label>
+      <input ng-model="nameSearch" type="text" class="form-control" placeholder="Search">
+    </div>
+  </form>
+
+</div>
+<br>
+<table>
+
+  <thead>
+
+
+  <tr>
+    <th>Tea</th>
+    <th>Information
+      <span class="pull-right">
+        <form class="dropdown">
+          <label for="priceSelect">Sort by price </label>
+          <select class="dropdown-menu" role="menu" ng-model="priceSelect" name="priceSelect">
+            <option value="price">lowest</option>
+            <option value="-price">highest</option>
+          </select>
+        </form>
+      </span>
+    </th>
+  </tr>
+</thead>
+<tbody>
+
+  <tr ng-repeat="tea in vm.teas | filter: nameSearch | filter: categorySelect | orderBy: priceSelect">
+    <td>
+      <img ng-src="{{tea.imageUrl}}" alt="tea picture" />
+    </td>
+    <td>
+      <h3>{{ tea.name }}
+        <span class="pull-right">
+          Quantity
+          <select ng-model="quantity">
+            <option ng-repeat="qty in [1,2,3,4,5,6,7,8,9,10]">{{qty}}</option>
+          </select>
+          <button type="button" name="button" class="btn btn-warning" ng-click="teas.addToBag(tea, quantity)">Add To Bag</button>
+        </span>
+      </h3>
+    </td>
+    <td>Price: {{ tea.price / 100 | currency }}</td>
+    <td>Caffine scale: {{ tea.caffeineScale }}</td>
+    <td>Ingredients: {{ tea.ingredients }}</td>
+    <td>Rating: {{ tea.rating }}</td>
+    <td>Ingredients: {{ tea.ingredients }}</td>
+    <td>In Stock: {{ tea.inStock }}</td>
+    <td>Categories: {{ tea.categories }}</td>
+</tr>
+</tbody>
+
+</table>

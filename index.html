@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="shoppingCartApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/slate/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <base href="/" target="_blank" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1><em>Welcome to MEAN Tea</em></h1>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+        </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        <a href="/#/" class="btn btn-default">
+          Things
+        </a>
+        <a href="/#/cart" class="btn btn-info">
+          Cart
+        </a>
+      </div>
+
+      <div ng-view></div>
+      
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.js" charset="utf-8"></script>
+    <script src="app/app.js" charset="utf-8"></script>
+    <script src="app/services.js"></script>
+    <script src="app/Controllers/market-controller.js" charset="utf-8"></script>
+    <script src="app/Controllers/bag-controller.js" charset="utf-8"></script>
+  </body>
+</html>
